@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <gtmdatalayers>
+            <general>
+                <product_identifier>sku</product_identifier>
+                <affiliation>Online Store</affiliation>
+            </general>
+        </gtmdatalayers>
+    </default>
+</config>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+?>
+<?php /** @var \Magespices\GTMDataLayers\Block\GTM\DataLayers\ProductDetails $block */ ?>
+
+<?php $product = $block->getProduct(); ?>
+<script>
+    dataLayer.push({
+        "ecommerce": {
+            "detail": {
+                "products": [{
+                    "name": "<?= $product->getName() ?>",
+                    "id": "<?= $block->getProductIdentifier() ?>",
+                    "price": "<?= $block->formatPrice($product->getFinalPrice()) ?>",
+                    "brand": "<?= $product->getAttributeText('producent') ?>",
+                    "category": "<?= $block->getCategoriesAsString($product->getCategoryIds()) ?>"
+                }]
+            }
+        }
+    });
+</script>
+
+<?= $block->getChildHtml() ?>

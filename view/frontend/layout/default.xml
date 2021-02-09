@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="gtm.datalayer.array"
+                   template="Magespices_GTMDataLayers::gtm/datalayer.phtml" />
+
+            <block class="Magespices\GTMDataLayers\Block\GTM\DataLayers\CartOperations"
+                   template="Magespices_GTMDataLayers::gtm/datalayers/cart_operations.phtml"
+                   name="gtm_cart_operations" />
+
+            <block class="Magespices\GTMDataLayers\Block\GTM\Header"
+                   template="Magespices_GTMDataLayers::gtm/header.phtml"
+                   name="gtm_header" />
+        </referenceBlock>
+        <referenceBlock name="after.body.start">
+            <block class="Magespices\GTMDataLayers\Block\GTM\Body"
+                   template="Magespices_GTMDataLayers::gtm/body.phtml"
+                   name="gtm_body" />
+        </referenceBlock>
+    </body>
+</page>

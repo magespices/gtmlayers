@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+?>
+<?php /** @var \Magespices\GTMDataLayers\Block\GTM\DataLayers\CartOperations $block */ ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magespices_GTMDataLayers/js/cart_operations": {
+                "currency_code": "<?= $block->getStoreCurrencyCode() ?>"
+            }
+        }
+    }
+</script>

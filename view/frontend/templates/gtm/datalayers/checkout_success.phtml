@@ -1,0 +1,59 @@
+<?php
+/**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+?>
+<?php /** @var \Magespices\GTMDataLayers\Block\GTM\DataLayers\CheckoutSuccess $block */ ?>
+
+<?php
+$order = $block->getOrder();
+$items = $order->getAllItems();
+$lastItem = end($items);
+?>
+
+<script>
+    dataLayer.push({
+        "ecommerce": {
+            "purchase": {
+                "actionField": {
+                    "id": "<?= $order->getIncrementId() ?>",
+                    "affiliation": "<?= $block->getAffiliationValue() ?>",
+                    "revenue": "<?= $block->formatPrice($order->getBaseGrandTotal()) ?>",
+                    "tax": "<?= $block->formatPrice($order->getTaxAmount()) ?>",
+                    "shipping": "<?= $block->formatPrice($order->getShippingAmount()) ?>",
+                    "coupon": "<?= $order->getCouponCode() ?: '' ?>"
+                },
+                "products": [
+                    <?php foreach ($items as $item): ?>
+                    <?php if (!in_array($item->getProductType(), [
+                    \Magento\Catalog\Model\Product\Type::TYPE_BUNDLE,
+                    \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE
+                ], true)): ?>
+                    <?php $product = $block->getProduct($item->getProductId()); ?>
+                    <?=
+                    sprintf(
+                        '{"name": "%s","id": "%s","price": "%s","brand": "%s","category": "%s","variant": "%s","quantity": %s}',
+                        $product->getName(),
+                        $block->getProductIdentifier($item->getParentItem() ? $item->getParentItem()->getProductId() : $item->getProductId()),
+                        $block->formatPrice($item->getParentItem() ? $item->getParentItem()->getBasePrice() : $item->getBasePrice()),
+                        $product->getAttributeText('producent') ?: '',
+                        $block->getCategoriesAsString($product->getCategoryIds()),
+                        $block->getProductOptionsAsString($item),
+                        $item->getQtyOrdered()
+                    )
+                    ?>
+                    <?= $item !== $lastItem ? ',' : '' ?>
+                    <?php endif; ?>
+                    <?php endforeach; ?>
+                ]
+            }
+        }
+    });
+</script>
+
+<?= $block->getChildHtml() ?>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Created by Q-Solutions Studio
+ * Date: 24.06.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Magespices\GTMDataLayers\Block\GTM\DataLayers\CheckoutSuccess"
+                   template="Magespices_GTMDataLayers::gtm/datalayers/checkout_success.phtml"
+                   after="gtm.datalayer.array"
+                   before="gtm_header"
+                   name="gtm_checkout_success">
+            </block>
+        </referenceBlock>
+    </body>
+</page>

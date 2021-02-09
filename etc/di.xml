@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Created by Q-Solutions Studio
+ * Date: 15.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\CustomerData\AbstractItem">
+        <plugin name="extend_product_data" type="Magespices\GTMDataLayers\Plugin\CustomerData\ExtendProductData" sortOrder="10" disabled="false" />
+    </type>
+</config>

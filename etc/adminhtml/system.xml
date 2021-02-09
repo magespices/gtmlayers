@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * Created by Q-Solutions Studio
+ * Date: 09.07.2020
+ *
+ * @category    Magespices
+ * @package     Magespices_GTMDataLayers
+ * @author      Maciej Buchert <maciej@qsolutionsstudio.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="gtmdatalayers" translate="label" sortOrder="10" type="text" showInStore="1" showInWebsite="1" showInDefault="1">
+            <label>GTM Data Layers</label>
+            <resource>Magespices_GTMDataLayers::config</resource>
+            <tab>magespices</tab>
+            <class>separator-top</class>
+            <group id="general" translate="label" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="gtm_identifier" translate="label comment" sortOrder="10" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>GTM Identifier</label>
+                    <comment>ex.: GTM-XXXX</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="product_identifier" translate="label comment" sortOrder="20" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Identifier</label>
+                    <validate>required-entry</validate>
+                    <source_model>Magespices\GTMDataLayers\Model\Config\Source\ProductAttributes</source_model>
+                </field>
+                <field id="affiliation" translate="label comment" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Affiliation</label>
+                    <comment><![CDATA[value added to actionField object. More: <a href="https://developers.google.com/tag-manager/enhanced-ecommerce#purchases">https://developers.google.com/tag-manager/enhanced-ecommerce#purchases</a>]]></comment>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="layers" translate="label" sortOrder="20" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Layers</label>
+                <field id="product_details_enabled" type="select" translate="label" sortOrder="10" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Product Details Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="cart_operations_enabled" type="select" translate="label" sortOrder="20" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Cart Operations Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="purchase_enabled" type="select" translate="label" sortOrder="30" showInStore="1" showInWebsite="1" showInDefault="1">
+                    <label>Purchase Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
