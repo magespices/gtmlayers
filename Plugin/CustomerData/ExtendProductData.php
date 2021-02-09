@@ -45,7 +45,7 @@ class ExtendProductData
         $product = $this->helper->getProduct($result['product_id']);
 
         if ($product) {
-            $result['producent'] = $product->getAttributeText('producent') ?? '';
+            $result['brand'] = $product->getAttributeText($this->helper->getProductBrandField()) ?? '';
             $result['identifier'] = $this->helper->getProductIdentifier($product->getId()) ?? '';
             $result['categories'] = $this->helper->getCategoriesAsString($product->getCategoryIds()) ?? '';
             $result['product_price_currency_code'] = $this->helper->getCurrencyCode() ?? '';

@@ -33,6 +33,9 @@ class Data extends AbstractHelper
     public const GTMDATALAYERS_GENERAL_PRODUCT_IDENTIFIER_XPATH = 'gtmdatalayers/general/product_identifier';
 
     /** @var string */
+    public const GTMDATALAYERS_GENERAL_PRODUCT_BRAND_XPATH = 'gtmdatalayers/general/product_brand';
+
+    /** @var string */
     public const GTMDATALAYERS_GENERAL_AFFILIATION_XPATH = 'gtmdatalayers/general/affiliation';
 
     /** @var string */
@@ -127,6 +130,14 @@ class Data extends AbstractHelper
             return $product->getData($attribute);
         }
         return '';
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductBrandField(): string
+    {
+        return $this->getConfigValue(self::GTMDATALAYERS_GENERAL_PRODUCT_BRAND_XPATH);
     }
 
     /**

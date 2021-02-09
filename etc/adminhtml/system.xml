@@ -32,6 +32,11 @@
                     <validate>required-entry</validate>
                     <source_model>Magespices\GTMDataLayers\Model\Config\Source\ProductAttributes</source_model>
                 </field>
+                <field id="product_brand" translate="label comment" sortOrder="25" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Brand</label>
+                    <validate>required-entry</validate>
+                    <source_model>Magespices\GTMDataLayers\Model\Config\Source\ProductAttributes</source_model>
+                </field>
                 <field id="affiliation" translate="label comment" sortOrder="30" type="text" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Affiliation</label>
                     <comment><![CDATA[value added to actionField object. More: <a href="https://developers.google.com/tag-manager/enhanced-ecommerce#purchases">https://developers.google.com/tag-manager/enhanced-ecommerce#purchases</a>]]></comment>

@@ -19,7 +19,7 @@
                     "name": "<?= $product->getName() ?>",
                     "id": "<?= $block->getProductIdentifier() ?>",
                     "price": "<?= $block->formatPrice($product->getFinalPrice()) ?>",
-                    "brand": "<?= $product->getAttributeText('producent') ?>",
+                    "brand": "<?= $product->getAttributeText($block->getProductBrandField()) ?>",
                     "category": "<?= $block->getCategoriesAsString($product->getCategoryIds()) ?>"
                 }]
             }

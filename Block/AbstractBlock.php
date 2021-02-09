@@ -79,6 +79,14 @@ abstract class AbstractBlock extends Template
     }
 
     /**
+     * @return string
+     */
+    public function getProductBrandField(): string
+    {
+        return $this->helper->getProductBrandField();
+    }
+
+    /**
      * @param array $categoryIds
      * @param string $glue
      * @return string

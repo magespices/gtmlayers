@@ -30,7 +30,7 @@ define([
                                 "name": product.product_name,
                                 "id": product.identifier,
                                 "price": product.product_price_value,
-                                "brand": product.producent,
+                                "brand": product.brand,
                                 "category": product.categories,
                                 "variant": this._getProductVariantsAsString(product.options),
                                 "quantity": product.qty

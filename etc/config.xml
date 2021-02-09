@@ -15,6 +15,7 @@
         <gtmdatalayers>
             <general>
                 <product_identifier>sku</product_identifier>
+                <product_brand>manufacturer</product_brand>
                 <affiliation>Online Store</affiliation>
             </general>
         </gtmdatalayers>
