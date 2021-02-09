@@ -12,6 +12,9 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
+        <tab id="magespices" translate="label" sortOrder="450">
+            <label>Magespices</label>
+        </tab>
         <section id="gtmdatalayers" translate="label" sortOrder="10" type="text" showInStore="1" showInWebsite="1" showInDefault="1">
             <label>GTM Data Layers</label>
             <resource>Magespices_GTMDataLayers::config</resource>
